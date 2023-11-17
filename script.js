@@ -9,7 +9,8 @@ let getJoke = () => {
     fetch(url)
     .then(data => data.json())
     .then(item => {
-        jokeContiner.textContent = `${item.joke}`;
+        jokeContiner.textContent = item.setup + ' ' + item.delivery;
+       // jokeContiner.textContent = `${item.joke}`;
     });
 }
 btn.addEventListener("click", getJoke);
